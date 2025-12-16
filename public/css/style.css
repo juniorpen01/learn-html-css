@@ -1,2 +1,77 @@
-/* body { */
-/* } */
+/* style.css */
+
+/*
+* selector
+* {}*/
+
+body {
+  background-color: #c3e6ed;
+}
+
+#one-and-only {
+  /* apparently id's take higher precedence than classes (100 vs 10) */
+  color: red;
+}
+
+.idiot {
+  color: magenta;
+}
+
+.idiot.dummkopf {
+  /* apparently 10+10 */
+  color: brown;
+}
+
+[id="idiot"] {
+  /* only precedence 10 */
+  color: cyan;
+}
+
+[class] {
+  /* actually wins cuz comes later down */
+  color: purple;
+}
+
+/* 
+* cuz im lazy:
+* for [attr{op}={val}]
+* op=...
+* ^ => start
+* $ => end
+* * => contains
+* ~ => in a space-separated list
+* | => in a dash-separated list
+* */
+
+.idiot[class="idiot"][class] {
+  color: peachpuff;
+}
+
+/*
+* other operators
+* > => child
+* " " => any descendant
+* + => pick the one after
+* ~ => pick everything after*/
+
+/* at this point im starting to give up trying everything out cuz wtf bruh */
+
+.idiot:hover {
+  font-weight: bold;
+}
+
+*::before {
+  content: "*";
+}
+
+selector1,
+selector2 {
+  /* i believe independent, just matching on multiple */
+  font-family: helvetica;
+}
+
+*:not(div, body) {
+  background-color: red;
+}
+
+/* i give up, but ig ill just keep the page up as reference */
